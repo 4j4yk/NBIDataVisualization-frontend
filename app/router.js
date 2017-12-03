@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('about');
   this.route('contact');
   this.route('nbidata');
+  this.route('events');
 });
 
 export default Router;
