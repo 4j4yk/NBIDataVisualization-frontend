@@ -35,7 +35,11 @@
     "ember-cli-uglify": "^2.0.0",
     "ember-composability": "^0.3.8",
     "ember-data": "~2.16.2",
+<<<<<<< HEAD
     "ember-data-table": "^1.0.0-alpha.3",
+=======
+    "ember-django-adapter": "^1.1.3",
+>>>>>>> 719a7e2208fe68b9726db05895c4b2d63407660b
     "ember-export-application-global": "^2.0.0",
     "ember-google-charts": "^1.5.3",
     "ember-keyboard": "^1.0.3",
@@ -58,5 +62,8 @@
   },
   "engines": {
     "node": "^4.5 || 6.* || >= 7.*"
+  },
+  "dependencies": {
+    "ember-django-adapter": "^1.1.3"
   }
 }

@@ -10,7 +10,7 @@ Router.map(function() {
   this.route('/', { path: '/index'});
   this.route('about')
   this.route('contact');
-  this.route('nbidata');
+  this.route('events');
   this.route('login');
   this.route('register');
   this.route('logout');
