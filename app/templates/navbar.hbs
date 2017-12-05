@@ -1,14 +1,36 @@
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      {{#link-to 'index' class="navbar-brand"}}NBI Data Visualization{{/link-to}}
+{{#paper-toolbar tall=true accent=false}}
+  {{#paper-toolbar-tools}}
+    <h1><center><b>NBI DATA VISUALIZATION</b></center></h1>
+  {{/paper-toolbar-tools}}
+  <div class="md-toolbar-tools">
+    {{#paper-button onClick=(action (transition-to 'index'))}}Home{{/paper-button}}
+    {{#paper-menu as |menu|}}
+      {{#menu.trigger}}
+        {{#paper-button }}NBI Data{{/paper-button}}
+      {{/menu.trigger}}
+      {{#menu.content width=4 accent=true as |content|}}
+           {{#content.menu-item onClick="bridges"}}
+            {{#paper-button onClick=(action (transition-to 'bridges'))}}Bridge Data Summary{{/paper-button}}
+           {{/content.menu-item}}
+           {{#content.menu-item onClick="bridges"}}
+            {{#paper-button onClick=(action (transition-to 'bridges'))}}Tabular Visualization{{/paper-button}}
+           {{/content.menu-item}}
+           {{#content.menu-item onClick="bridges"}}
+            {{#paper-button onClick=(action (transition-to 'bridges'))}}Graphical Visualization{{/paper-button}}
+           {{/content.menu-item}}
+      {{/menu.content}}
+    {{/paper-menu}}
+    {{#paper-button onClick=(action (transition-to 'about'))}}About{{/paper-button}}
+    {{#paper-button onClick=(action (transition-to 'contact'))}}Contact{{/paper-button}}
+    <div class="paper-right">
+        {{#paper-button onClick=(action (transition-to 'login'))}}Login{{/paper-button}}
+        {{#paper-button onClick=(action (transition-to 'register'))}}Register{{/paper-button}}
     </div>
+<<<<<<< HEAD
+  </div>
+{{/paper-toolbar}}
+{{outlet}}
+=======
 
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav">
