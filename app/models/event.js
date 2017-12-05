@@ -4,7 +4,7 @@ export default DS.Model.extend({
     year: DS.attr(),
     stateCode: DS.attr(),
     structureNumber: DS.attr(),
-    inventoryroute: DS.attr(),
+    inventoryRoute: DS.attr(),
     highwayAgencyDistrict: DS.attr(),
     countyCode: DS.attr(),
     placeCode: DS.attr(),

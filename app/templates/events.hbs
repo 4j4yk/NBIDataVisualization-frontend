@@ -1,7 +1,8 @@
 <h1>events</h1>
 
 {{#each model as |event|}}
-<div>{{event.culverts}}
+<div>
+{{!-- {{event.culverts}}
 {{event.deck}}
 {{event.kilometerpoint}}
 {{event.latitude}}
@@ -12,6 +13,6 @@
 {{event.statuswith10yearrule}}
 {{event.substructure}}
 {{event.superstructure}}
-{{event.toll}}
-{{event.year}}</div>
+{{event.toll}} --}}
+{{event.inventoryRoute.routeNumber}}</div>
 {{/each}}
