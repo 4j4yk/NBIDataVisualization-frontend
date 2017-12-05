@@ -1,4 +1,16 @@
-@import "bootstrap";
-body {
-    padding-top: 20px;
-  }
+// Fix for Roboto font path
+$roboto-font-path: '../assets/';
+@import 'ember-paper';
+@import 'paper-data-table';
+// Materialize styles
+@import "materialize";
+.paper-right{
+  marigin-left:500x;
+}
+.centered-form{
+  display: flex;
+  flex-direction: column;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items: center;
+}

@@ -1,0 +1,27 @@
+
+{{#paper-content class="md-padding centered-form"}}
+{{!-- {{#paper-form onSubmit=(action "basicSubmitAction") as |form|}} --}}
+{{#paper-form as |form|}}
+  <h5> Login </h5>
+  <div class="layout-column flex-50">
+    <div class="layout-column flex-50">
+      <div class="layout-column flex-50">
+        {{paper-input class="flex-10" label="Username" value=username onChange=(action (mut username)) required=true errorMessages=(hash required="Username is required." icon="person")}}
+      </div>
+      <div class="layout-column flex-50">
+        {{paper-input class="flex-10" label="Password" type="password" value=password onChange=(action (mut password)) required=true errorMessages=(hash required="password is required.")}}
+      </div>
+    </div>
+    <div class="layout-row">
+    {{#form.submit-button raised=true primary=true}} Submit {{/form.submit-button}}
+  </div>
+</div>
+{{/paper-form}}
+{{/paper-content}}
+{{#if errorMessage}}
+ <p>
+   <strong>Login failed:</strong>
+   <code>{{errorMessage}}</code>
+ </p>
+{{/if}}
+{{outlet}}

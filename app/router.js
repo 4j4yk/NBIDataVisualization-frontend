@@ -7,9 +7,14 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('about');
+  this.route('/', { path: '/index'});
+  this.route('about')
   this.route('contact');
   this.route('nbidata');
+  this.route('login');
+  this.route('register');
+  this.route('logout');
+  this.route('bridges');
 });
 
 export default Router;
