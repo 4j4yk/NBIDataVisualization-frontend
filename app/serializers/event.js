@@ -91,6 +91,6 @@ export default DRFSerializer.extend(DS.EmbeddedRecordsMixin, {
         deductCode: ('deductCode'),
         statuswith10yearrule: ('statuswith10yearrule'),
         sufficiencyRatingAsteriskField: ('sufficiencyRatingAsteriskField'),
-        sufficiencyRating: ('sufficiencyRating')
+        sufficiencyRating: ('sufficiencyRating') 
       }
 });
