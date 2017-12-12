@@ -15,6 +15,7 @@ Router.map(function() {
   this.route('register');
   this.route('logout');
   this.route('bridges');
+  this.route('events');
 });
 
 export default Router;
