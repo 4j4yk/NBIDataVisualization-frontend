@@ -1,9 +1,54 @@
-<h1>events</h1>
-{{jets-search contentTag="#list" content=model}}
-<div id="list">
-  {{#each model as |event|}}
-    <div>
-      {{event.year}}
-    </div>
-  {{/each}}
+<h6 class=centered-form><b>NBI Data Summary</b></h6>
+<div>
+<p>
+  National Bridge Inventory is a database compiled by the Federal Highway
+Administration every year. It is composed of information of United States bridges or
+culverts that carry traffic and are longer than 20 feet. For the 2008 edition of the NBI,
+there are 717,902 records, and 591,605 of which are qualified for highway bridges based
+on the criterion of type of service on bridge and the National Bridge Inspection Standards
+(NBIS) bridge length.
+</p>
+<p>
+Each NBI bridge record contains 116 item attributes. The large number of attributes
+makes exploratory data analysis a more appealing method for data analysis than
+traditional statistical analysis. Some of the characteristics used to describe bridges include
+age, location, materials and deck width. Other parts indicates operational conditions
+including year build, type of services provided, rehabilitation year, average daily traffic,
+as well as information regarding to bypass and detours. The rest are conditions and
+appraisal ratings assigned by inspectors for each bridge in the database.
+According to the NBIS, condition ratings are used to describe the current condition of
+bridges or culverts. It assesses the physical condition of deck, superstructure and
+substructure. The ratings range from 0 - for a failed condition to 9 - for an excellent
+condition. The appraisal ratings, however, reveal serviceability and safety of the structure.
+</p>
+<p>
+The evaluation includes field condition, waterway adequacy, geometric and safety
+configurations, structural evaluation as well as safe load capacity of the bridge.
+These conditions and appraisal ratings can be used for the classification of a bridge as
+functionally obsolete or structurally deficient.If a bridge is classified as structurally
+deficient with the condition ratings lower than 5, it implies the bridge may need further
+analysis and even require maintenance, rehabilitation or replacement. However, if a
+bridge is classified as functionally obsolete, it reveals only that the inadequacy of the
+bridge‘s performance with respect to the transportation system.
+</p>
 </div>
+{{!-- {{#each model as |event|}}
+<div>
+  {{event.stateCode}}
+  {{event.year}}
+  {{event.structureNumber}}
+  {{event.culverts}}
+  {{event.deck}}
+  {{event.kilometerpoint}}
+  {{event.latitude}}
+  {{event.longitude}}
+  {{event.location}}
+  {{event.pier}}
+  {{event.skew}}
+  {{event.statuswith10yearrule}}
+  {{event.substructure}}
+  {{event.superstructure}}
+  {{event.toll}}
+  {{event.inventoryRoute.routeNumber}}
+</div>
+{{/each}} --}}

@@ -9,7 +9,6 @@ const App = Application.extend({
   Resolver
 });
 
-
 loadInitializers(App, config.modulePrefix);
 
 export default App;

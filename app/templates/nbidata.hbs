@@ -1,4 +1,511 @@
- <h3>NBI data</h3>
- <div>
- {{area-chart data=data options=options}}
- </div>
+{{!-- {{nbidata model=model}} --}}
+<h6 class=centered-form><b>NBI Data Summary - Graphical Visualization</b></h6>
+{{!-- paper expansion panel for chart1 --}}
+{{#paper-expansion-panel as |panel|}}
+  {{#panel.collapsed}}
+    <div class="md-panel-title">Bridges By Year{{item}}</div>
+    <div class="md-panel-summary">Bridge Distribution by Year - Line Chart</div>
+    {{paper-icon "keyboard_arrow_down"}}
+  {{/panel.collapsed}}
+
+  {{#panel.expanded as |expanded|}}
+    {{#expanded.header}}
+      <div class="md-panel-title">Bridges by Year</div>
+      <div class="md-panel-summary">Number of Bridges in United States Year wise with the State Names</div>
+      {{paper-icon "keyboard_arrow_up"}}
+    {{/expanded.header}}
+
+    {{#expanded.content}}
+    <div>
+    {{line-chart data=cdata options=customoptions1}}
+    </div>
+    <br>
+    {{/expanded.content}}
+
+    {{#expanded.footer}}
+      <span class="flex"></span>
+      {{#paper-button onClick=(action panel.collapse)}}
+        ok
+      {{/paper-button}}
+    {{/expanded.footer}}
+
+  {{/panel.expanded}}
+{{/paper-expansion-panel}}
+
+
+
+{{!-- paper expansion panel for chart2 --}}
+{{#paper-expansion-panel as |panel|}}
+  {{#panel.collapsed}}
+    <div class="md-panel-title">Bridges By ServiceType{{item}}</div>
+    <div class="md-panel-summary">Bridge Distribution by type of Service - pie-chart</div>
+    {{paper-icon "keyboard_arrow_down"}}
+  {{/panel.collapsed}}
+
+  {{#panel.expanded as |expanded|}}
+    {{#expanded.header}}
+      <div class="md-panel-title">Bridges by Year</div>
+      <div class="md-panel-summary">Bridge Distribution in United States by type of Service with StructureNumber</div>
+      {{paper-icon "keyboard_arrow_up"}}
+    {{/expanded.header}}
+
+    {{#expanded.content}}
+    <div>
+    <h5>Scatter chart showing Bridges StructureNumber by Type of Service </h5>
+    {{pie-chart data=servicedata  options=customoptions}}
+    </div>
+    <br>
+    {{/expanded.content}}
+
+    {{#expanded.footer}}
+      <span class="flex"></span>
+      {{#paper-button onClick=(action panel.collapse)}}
+        ok
+      {{/paper-button}}
+    {{/expanded.footer}}
+
+  {{/panel.expanded}}
+{{/paper-expansion-panel}}
+
+
+
+
+{{!-- paper expansion panel for chart6 --}}
+{{#paper-expansion-panel as |panel|}}
+  {{#panel.collapsed}}
+    <div class="md-panel-title">Bridges By Year Built{{item}}</div>
+    <div class="md-panel-summary">Bridge Distribution by Year Built - Bar Chart</div>
+    {{paper-icon "keyboard_arrow_down"}}
+  {{/panel.collapsed}}
+
+  {{#panel.expanded as |expanded|}}
+    {{#expanded.header}}
+      <div class="md-panel-title">Bridges By Year Built</div>
+      <div class="md-panel-summary">Bridge Distribution in UnitedStates based on the year built - Bar Chart</div>
+      {{paper-icon "keyboard_arrow_up"}}
+    {{/expanded.header}}
+
+    {{#expanded.content}}
+    <div>
+    {{!-- <h5>bar chart showing bridges in United States by year</h5> --}}
+    {{bar-chart data=cdata  width=1000 options=customoptions}}
+    </div>
+    {{/expanded.content}}
+
+    {{#expanded.footer}}
+      <span class="flex"></span>
+      {{#paper-button onClick=(action panel.collapse)}}
+        ok
+      {{/paper-button}}
+    {{/expanded.footer}}
+
+  {{/panel.expanded}}
+{{/paper-expansion-panel}}
+
+
+
+{{!-- paper expansion panel for chart9 --}}
+{{#paper-expansion-panel as |panel|}}
+  {{#panel.collapsed}}
+    <div class="md-panel-title">Bridges By Year Built{{item}}</div>
+    <div class="md-panel-summary">Bridge Distribution by Year Built- Line Chart</div>
+    {{paper-icon "keyboard_arrow_down"}}
+  {{/panel.collapsed}}
+
+  {{#panel.expanded as |expanded|}}
+    {{#expanded.header}}
+      <div class="md-panel-title">Bridges by Year Built</div>
+      <div class="md-panel-summary">Bridge Distribution in UnitedStates based by Year Built with StructureNumber - Line Chart</div>
+      {{paper-icon "keyboard_arrow_up"}}
+    {{/expanded.header}}
+
+    {{#expanded.content}}
+    <div>
+    {{!-- <h5>line chart showing bridge structure in United States by year built</h5> --}}
+    {{line-chart data=sdata options=customoptions}}
+    </div>
+    <br>
+    {{/expanded.content}}
+
+    {{#expanded.footer}}
+      <span class="flex"></span>
+      {{#paper-button onClick=(action panel.collapse)}}
+        ok
+      {{/paper-button}}
+    {{/expanded.footer}}
+
+  {{/panel.expanded}}
+{{/paper-expansion-panel}}
+
+{{!-- paper expansion panel for chart7 --}}
+{{#paper-expansion-panel as |panel|}}
+  {{#panel.collapsed}}
+    <div class="md-panel-title">By StructureLength{{item}}</div>
+    <div class="md-panel-summary">Bridge Distribution by Length of the Structure - Bar Chart</div>
+    {{paper-icon "keyboard_arrow_down"}}
+  {{/panel.collapsed}}
+
+  {{#panel.expanded as |expanded|}}
+    {{#expanded.header}}
+      <div class="md-panel-title">By StructureLength</div>
+      <div class="md-panel-summary">Bridge Distribution in UnitedStates based on the Length of the Structure - Bar Chart</div>
+      {{paper-icon "keyboard_arrow_up"}}
+    {{/expanded.header}}
+
+    {{#expanded.content}}
+    <div>
+    {{!-- <h5>bar chart showing bridges in United States by structureLength</h5> --}}
+    {{bar-chart data=lendata  width=1000 options=customoptions}}
+    </div>
+    <br>
+    {{/expanded.content}}
+
+    {{#expanded.footer}}
+      <span class="flex"></span>
+      {{#paper-button onClick=(action panel.collapse)}}
+        ok
+      {{/paper-button}}
+    {{/expanded.footer}}
+
+  {{/panel.expanded}}
+{{/paper-expansion-panel}}
+
+
+
+
+
+
+
+
+
+{{!-- paper expansion panel for chart10 --}}
+{{#paper-expansion-panel as |panel|}}
+  {{#panel.collapsed}}
+    <div class="md-panel-title">By SufficiencyRating{{item}}</div>
+    <div class="md-panel-summary">Bridge Distribution by SufficiencyRating - Geo Chart</div>
+    {{paper-icon "keyboard_arrow_down"}}
+  {{/panel.collapsed}}
+
+  {{#panel.expanded as |expanded|}}
+    {{#expanded.header}}
+      <div class="md-panel-title">By SufficiencyRating</div>
+      <div class="md-panel-summary">Bridge Distribution in UnitedStates by SufficiencyRating - Geo Chart</div>
+      {{paper-icon "keyboard_arrow_up"}}
+    {{/expanded.header}}
+
+    {{#expanded.content}}
+    <div>
+    {{!-- <h5>Geographical Chart showing sufficiencyRating of bridges in United States</h5> --}}
+    {{geo-chart data=geodata options= customoptions1 }}
+    </div>
+    <br>
+    {{/expanded.content}}
+
+    {{#expanded.footer}}
+      <span class="flex"></span>
+      {{#paper-button onClick=(action panel.collapse)}}
+        ok
+      {{/paper-button}}
+    {{/expanded.footer}}
+
+  {{/panel.expanded}}
+{{/paper-expansion-panel}}
+
+
+{{!-- paper expansion panel for chart10 --}}
+{{#paper-expansion-panel as |panel|}}
+  {{#panel.collapsed}}
+    <div class="md-panel-title">By OperatingRating{{item}}</div>
+    <div class="md-panel-summary">Bridge Distribution by OperatingRating - Geo Chart</div>
+    {{paper-icon "keyboard_arrow_down"}}
+  {{/panel.collapsed}}
+
+  {{#panel.expanded as |expanded|}}
+    {{#expanded.header}}
+      <div class="md-panel-title">By OperatingRating</div>
+      <div class="md-panel-summary">Bridge Distribution in UnitedStates by OperatingRating - Geo Chart</div>
+      {{paper-icon "keyboard_arrow_up"}}
+    {{/expanded.header}}
+
+    {{#expanded.content}}
+    <div>
+    {{!-- <h5>Geographical Chart showing sufficiencyRating of bridges in United States</h5> --}}
+    {{geo-chart data=odata options= customoptions1 }}
+    </div>
+    <br>
+    {{/expanded.content}}
+
+    {{#expanded.footer}}
+      <span class="flex"></span>
+      {{#paper-button onClick=(action panel.collapse)}}
+        ok
+      {{/paper-button}}
+    {{/expanded.footer}}
+
+  {{/panel.expanded}}
+{{/paper-expansion-panel}}
+
+{{!-- paper expansion panel for chart5 --}}
+{{#paper-expansion-panel as |panel|}}
+  {{#panel.collapsed}}
+    <div class="md-panel-title">Bridges By ADT{{item}}</div>
+    <div class="md-panel-summary">Bridge Distribution by Average Daily Traffic - Pie Chart</div>
+    {{paper-icon "keyboard_arrow_down"}}
+  {{/panel.collapsed}}
+
+  {{#panel.expanded as |expanded|}}
+    {{#expanded.header}}
+      <div class="md-panel-title">Bridges by Year</div>
+      <div class="md-panel-summary">Bridge Distribution in UnitedStates based on the Average Daily Traffic (ADT)- Pie Chart</div>
+      {{paper-icon "keyboard_arrow_up"}}
+    {{/expanded.header}}
+
+    {{#expanded.content}}
+    <div>
+    {{!-- <h5>pie chart showing bridges in United States by total averageDailyTraffic</h5> --}}
+    {{pie-chart data=tdata  width=1000 options=customoptions}}
+    </div>
+    {{/expanded.content}}
+
+    {{#expanded.footer}}
+      <span class="flex"></span>
+      {{#paper-button onClick=(action panel.collapse)}}
+        ok
+      {{/paper-button}}
+    {{/expanded.footer}}
+
+  {{/panel.expanded}}
+{{/paper-expansion-panel}}
+{{!-- paper expansion panel for chart11 --}}
+{{#paper-expansion-panel as |panel|}}
+  {{#panel.collapsed}}
+    <div class="md-panel-title">Bridges By ADT{{item}}</div>
+    <div class="md-panel-summary">Bridge Distribution by Average Daily Traffic - Geo Chart</div>
+    {{paper-icon "keyboard_arrow_down"}}
+  {{/panel.collapsed}}
+
+  {{#panel.expanded as |expanded|}}
+    {{#expanded.header}}
+      <div class="md-panel-title">Bridges by ADT</div>
+      <div class="md-panel-summary">Bridge Distribution among the UnitedStates based on the Average Daily Traffic - Geo Chart</div>
+      {{paper-icon "keyboard_arrow_up"}}
+    {{/expanded.header}}
+
+    {{#expanded.content}}
+    <div>
+    {{!-- <h5>Geographical Chart showing AverageDailyTraffic of bridges in United States</h5> --}}
+    {{geo-chart data=geodata_traffic options=customoptions3 }}
+    </div>
+    <br>
+    {{/expanded.content}}
+
+    {{#expanded.footer}}
+      <span class="flex"></span>
+      {{#paper-button onClick=(action panel.collapse)}}
+        ok
+      {{/paper-button}}
+    {{/expanded.footer}}
+
+  {{/panel.expanded}}
+{{/paper-expansion-panel}}
+
+{{!-- paper expansion panel for chart12 --}}
+{{#paper-expansion-panel as |panel|}}
+  {{#panel.collapsed}}
+    <div class="md-panel-title">Bridges By ADT{{item}}</div>
+    <div class="md-panel-summary">Bridge Distribution by Average Daily Traffic - Scatter Chart</div>
+    {{paper-icon "keyboard_arrow_down"}}
+  {{/panel.collapsed}}
+
+  {{#panel.expanded as |expanded|}}
+    {{#expanded.header}}
+      <div class="md-panel-title">Bridges by ADT</div>
+      <div class="md-panel-summary">Bridge Distribution among the UnitedStates based on the Average Daily Traffic - Scatter Chart</div>
+      {{paper-icon "keyboard_arrow_up"}}
+    {{/expanded.header}}
+
+    {{#expanded.content}}
+    <div>
+    {{!-- <h5>Scatter Chart showing AverageDailyTraffic of bridges in United States</h5> --}}
+    {{scatter-chart data=geodata_traffic options=customoptions1 }}
+    </div>
+    <br>
+    {{/expanded.content}}
+
+    {{#expanded.footer}}
+      <span class="flex"></span>
+      {{#paper-button onClick=(action panel.collapse)}}
+        ok
+      {{/paper-button}}
+    {{/expanded.footer}}
+
+  {{/panel.expanded}}
+{{/paper-expansion-panel}}
+
+
+
+{{!-- paper expansion panel for chart3 --}}
+{{#paper-expansion-panel as |panel|}}
+  {{#panel.collapsed}}
+    <div class="md-panel-title">Scour Critical Bridges{{item}}</div>
+    <div class="md-panel-summary">Bridge Distribution based on Scour Criticality - Pie Chart</div>
+    {{paper-icon "keyboard_arrow_down"}}
+  {{/panel.collapsed}}
+
+  {{#panel.expanded as |expanded|}}
+    {{#expanded.header}}
+      <div class="md-panel-title">Scour Critical Bridges</div>
+      <div class="md-panel-summary">Bridge Distribution in UnitedStates based on Scour Criticality wise with the StructureNumber - Pie Chart</div>
+      {{paper-icon "keyboard_arrow_up"}}
+    {{/expanded.header}}
+
+    {{#expanded.content}}
+    <div>
+    {{!-- <h5>pie chart showing Scour Critical bridges in United States by structureNumber </h5> --}}
+    {{pie-chart data=scour  options=customoptions}}
+    </div>
+    {{/expanded.content}}
+
+    {{#expanded.footer}}
+      <span class="flex"></span>
+      {{#paper-button onClick=(action panel.collapse)}}
+        ok
+      {{/paper-button}}
+    {{/expanded.footer}}
+
+  {{/panel.expanded}}
+{{/paper-expansion-panel}}
+
+
+{{!-- paper expansion panel for chart4 --}}
+{{#paper-expansion-panel as |panel|}}
+  {{#panel.collapsed}}
+    <div class="md-panel-title">Scour Critical Bridges{{item}}</div>
+    <div class="md-panel-summary">Bridge Distribution based on Scour Criticality - Scatter Chart</div>
+    {{paper-icon "keyboard_arrow_down"}}
+  {{/panel.collapsed}}
+
+  {{#panel.expanded as |expanded|}}
+    {{#expanded.header}}
+      <div class="md-panel-title">Scour Critical Bridges</div>
+      <div class="md-panel-summary">Bridge Distribution in UnitedStates based on Scour Criticality wise with the StructureNumber - Scatter Chart</div>
+      {{paper-icon "keyboard_arrow_up"}}
+    {{/expanded.header}}
+
+    {{#expanded.content}}
+    <div>
+    {{!-- <h5>Scatter Chart showing Scour Critical Bridges in United States by structureNumber</h5> --}}
+    {{scatter-chart data=scour options=customoptions }}
+    </div>
+    {{/expanded.content}}
+
+    {{#expanded.footer}}
+      <span class="flex"></span>
+      {{#paper-button onClick=(action panel.collapse)}}
+        ok
+      {{/paper-button}}
+    {{/expanded.footer}}
+
+  {{/panel.expanded}}
+{{/paper-expansion-panel}}
+
+
+{{!-- paper expansion panel for chart13 --}}
+{{#paper-expansion-panel as |panel|}}
+  {{#panel.collapsed}}
+    <div class="md-panel-title">Scour Critical Bridges{{item}}</div>
+    <div class="md-panel-summary">Bridge Distribution in UnitedStates based on Scour Criticality - Geo Chart</div>
+    {{paper-icon "keyboard_arrow_down"}}
+  {{/panel.collapsed}}
+
+  {{#panel.expanded as |expanded|}}
+    {{#expanded.header}}
+      <div class="md-panel-title">ScourCritical Bridges</div>
+      <div class="md-panel-summary">Bridge Distribution in UnitedStates based on Scour Criticality wise with the StructureNumber - Geo Chart</div>
+      {{paper-icon "keyboard_arrow_up"}}
+    {{/expanded.header}}
+
+    {{#expanded.content}}
+    <div>
+    {{!-- <h5>Geographical Chart showing Scour Critical Bridges</h5> --}}
+    {{geo-chart data=gdata options=customoptions1 }}
+    </div>
+    {{/expanded.content}}
+
+    {{#expanded.footer}}
+      <span class="flex"></span>
+      {{#paper-button onClick=(action panel.collapse)}}
+        ok
+      {{/paper-button}}
+    {{/expanded.footer}}
+
+  {{/panel.expanded}}
+{{/paper-expansion-panel}}
+{{!-- {{#paper-select
+  placeholder="Assign to a user"
+  selected=selectedUser
+  options=users
+  onChange=(action (mut selectedUser))
+  as |user|}}
+  {{user.name}}
+{{/paper-select}}
+
+{{#if selectedUser}}
+  <p>You have selected the user <code>{{selectedUser.name}}</code></p>
+{{/if}} --}}
+{{!-- {{#paper-tabs
+  center=center
+  stretch=stretch
+  borderBottom=borderBottom
+  selected=selectedBasicTab
+  onChange=(action (mut selectedBasicTab)) as |tabs|}}
+  {{#tabs.tab value="Page 1" href=(href-to "register")}}
+    Page One
+  {{/tabs.tab}}
+  {{#tabs.tab value="Page 2" href=(href-to "about")}}
+    Page Two
+  {{/tabs.tab}}
+  {{#tabs.tab}}
+    Page Three
+  {{/tabs.tab}}
+  {{#tabs.tab}}
+    Page Three
+  {{/tabs.tab}}
+  {{#tabs.tab}}
+    Page Three
+  {{/tabs.tab}}
+{{/paper-tabs}} --}}
+
+{{!-- {{#liquid-bind (hash tab=selectedBasicTab) class="md-padding" as |current|}}
+  <h1 class="md-display-2">Tab {{current.tab}}</h1>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis
+    vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices.
+    Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.
+  </p>
+{{/liquid-bind}} --}}
+
+{{!-- <p><h5> Bridges in United States by year </h5></p> --}}
+{{!-- <div>
+{{line-chart data=cdata options=customoptions1}}
+</div></p>
+<br> --}}
+
+
+{{!-- <div>
+<h5>Geographical Chart using latitude and longitude</h5>
+{{geo-chart data=gdata options=customoptions1 }}
+</div> --}}
+{{!-- <br> --}}
+{{!-- <div>
+<h5>Scatter Chart</h5>
+{{scatter-chart cdata=cdata options=options}}
+</div> --}}
+
+{{!-- <div>
+<h5>Geographical Chart</h5>
+{{geo-chart data=cdata options=options}}
+</div> --}}
+
+{{outlet}}

@@ -19,7 +19,7 @@ export default DRFSerializer.extend(DS.EmbeddedRecordsMixin, {
         functionalClassOfInventoryRte: 'functionalClassOfInventoryRte',
         yearBuilt: 'yearBuilt',
         lanesOnUnderStructure: ('lanesOnUnderStructure'),
-        averageDailyTraffi: ('averageDailyTraffi'),
+        averageDailyTraffic: ('averageDailyTraffic'),
         yearOfAverageDailyTraffic: ('yearOfAverageDailyTraffic'),
         designLoad: ('designLoad'),
         approachRoadwayWidth: ('approachRoadwayWidth'),
@@ -91,6 +91,6 @@ export default DRFSerializer.extend(DS.EmbeddedRecordsMixin, {
         deductCode: ('deductCode'),
         statuswith10yearrule: ('statuswith10yearrule'),
         sufficiencyRatingAsteriskField: ('sufficiencyRatingAsteriskField'),
-        sufficiencyRating: ('sufficiencyRating') 
+        sufficiencyRating: ('sufficiencyRating')
       }
 });

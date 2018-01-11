@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 
-export default DS.Model.extend({  
+export default DS.Model.extend({
     year: DS.attr(),
     stateCode: DS.attr(),
     structureNumber: DS.attr(),
@@ -24,7 +24,7 @@ export default DS.Model.extend({
     functionalClassOfInventoryRte : DS.attr(),
     yearBuilt: DS.attr(),
     lanesOnUnderStructure: DS.attr(),
-    averageDailyTraffi: DS.attr(),
+    averageDailyTraffic: DS.attr(),
     yearOfAverageDailyTraffic: DS.attr(),
     designLoad: DS.attr(),
     approachRoadwayWidth: DS.attr(),

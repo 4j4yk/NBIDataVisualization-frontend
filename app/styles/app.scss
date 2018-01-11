@@ -2,6 +2,10 @@
 $roboto-font-path: '../assets/';
 @import 'ember-paper';
 @import 'paper-data-table';
+@import "ember-paper";
+@import "ember-paper-tabs";
+@import "ember-paper-expansion-panel";
+
 // Materialize styles
 @import "materialize";
 .paper-right{
