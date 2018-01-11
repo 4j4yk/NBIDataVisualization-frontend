@@ -1,9 +1,11 @@
+
 // Fix for Roboto font path
 $roboto-font-path: '../assets/';
+// @import "bootstrap/scss/bootstrap";
 @import 'ember-paper';
 @import 'paper-data-table';
 @import "ember-paper";
-@import "ember-paper-tabs";
+// @import "ember-paper-tabs";
 @import "ember-paper-expansion-panel";
 
 // Materialize styles

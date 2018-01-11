@@ -18,6 +18,7 @@
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
+    "ember-clean-tmp": "^0.1.4",
     "ember-cli": "~2.16.2",
     "ember-cli-app-version": "^3.0.0",
     "ember-cli-babel": "^6.6.0",
@@ -48,7 +49,6 @@
     "ember-new-computed": "^1.0.3",
     "ember-paper": "^1.0.0-beta.4",
     "ember-paper-expansion-panel": "0.0.1",
-    "ember-paper-tabs": "0.0.1",
     "ember-radio-button": "^1.0.7",
     "ember-resolver": "^4.0.0",
     "ember-simple-auth": "^1.4.0",
@@ -64,6 +64,7 @@
     "node": "^4.5 || 6.* || >= 7.*"
   },
   "dependencies": {
+    "@covalent/core": "git+https://github.com/Teradata/covalent-nightly.git",
     "ember-django-adapter": "^1.1.3"
   }
 }

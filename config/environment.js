@@ -30,7 +30,7 @@ module.exports = function(environment) {
     ENV.APP.LOG_TRANSITIONS = true;
     ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
-    ENV.APP.API_HOST = 'http://localhost';
+    ENV.APP.API_HOST = 'https://tranquil-meadow-11327.herokuapp.com';
   }
 
   if (environment === 'test') {
@@ -46,6 +46,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.APP.API_HOST = 'https://tranquil-meadow-11327.herokuapp.com'
   }
 
   return ENV;
