@@ -1,0 +1,31 @@
+{{#paper-toolbar tall=true accent=false}}
+  {{#paper-toolbar-tools}}
+    <h1><center><b>NBI DATA VISUALIZATION</b></center></h1>
+  {{/paper-toolbar-tools}}
+  <div class="md-toolbar-tools">
+    {{#paper-button onClick=(action (transition-to 'index'))}}Home{{/paper-button}}
+    {{#paper-menu as |menu|}}
+      {{#menu.trigger}}
+        {{#paper-button }}NBI Data{{/paper-button}}
+      {{/menu.trigger}}
+      {{#menu.content width=4 accent=true as |content|}}
+           {{#content.menu-item}}
+            {{#paper-button onClick=(action (transition-to 'events'))}}Bridge Data Summary{{/paper-button}}
+           {{/content.menu-item}}
+           {{#content.menu-item}}
+            {{#paper-button onClick=(action (transition-to 'bridges'))}}Tabular Visualization{{/paper-button}}
+           {{/content.menu-item}}
+           {{#content.menu-item}}
+            {{#paper-button onClick=(action (transition-to 'nbidata'))}}Graphical Visualization{{/paper-button}}
+           {{/content.menu-item}}
+      {{/menu.content}}
+    {{/paper-menu}}
+    {{#paper-button onClick=(action (transition-to 'about'))}}About{{/paper-button}}
+    {{#paper-button onClick=(action (transition-to 'contact'))}}Contact{{/paper-button}}
+    <div class="paper-right">
+        {{#paper-button onClick=(action (transition-to 'login'))}}Login{{/paper-button}}
+        {{#paper-button onClick=(action (transition-to 'register'))}}Register{{/paper-button}}
+    </div>
+  </div>
+{{/paper-toolbar}}
+{{outlet}}

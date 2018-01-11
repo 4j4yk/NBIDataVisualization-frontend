@@ -1,0 +1,27 @@
+<div>
+    {{#paper-content class="md-padding centered-form"}}
+    {{!-- {{#paper-form onSubmit=(action "basicSubmitAction") as |form|}} --}}
+    {{#paper-form as |form|}}
+    <h5> Register to NBI Data</h5>
+      <div class="layout-column">
+        <div class="layout-column flex-10">
+          {{paper-input class="flex-50" label="First Name" value=firstname onChange=(action (mut firstname))}}
+          {{paper-input class="flex-50" label="Last Name" value=lastname onChange=(action (mut lastname))}}
+        </div>
+        <div class="layout-column flex-50">
+          {{paper-input class="flex-50" label="Username" value=username onChange=(action (mut username)) required=true errorMessages=(hash required="Username is required." icon="person")}}
+        </div>
+        <div class="layout-column flex-50">
+          {{paper-input class="flex-50" label="E-mail" type="email" value=email onChange=(action (mut email)) required=true errorMessages=(hash required="e-mail is required." icon="email")}}
+        </div>
+        <div class="layout-column flex-50">
+          {{paper-input class="flex-50" label="Password" type="password" value=password onChange=(action (mut password)) required=true errorMessages=(hash required="password is required.")}}
+        </div>
+      </div>
+      <div class="layout-row">
+        {{#form.submit-button raised=true primary=true}}Register{{/form.submit-button}}
+      </div>
+    {{/paper-form}}
+    {{/paper-content}}
+</div>
+{{outlet}}

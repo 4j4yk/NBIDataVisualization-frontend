@@ -1,0 +1,23 @@
+{{!-- {{#each model as |event|}}
+<div>
+  {{event.stateCode}}
+  {{event.year}}
+  {{event.structureNumber}}
+  {{event.culverts}}
+  {{event.deck}}
+  {{event.kilometerpoint}}
+  {{event.latitude}}
+  {{event.longitude}}
+  {{event.location}}
+  {{event.pier}}
+  {{event.skew}}
+  {{event.statuswith10yearrule}}
+  {{event.substructure}}
+  {{event.superstructure}}
+  {{event.toll}}
+  {{event.inventoryRoute.routeNumber}}
+</div>
+{{/each}} --}}
+<h6 class=centered-form><b>NBI Data Summary - Tabular Visualization</b></h6>
+{{data-table content=model fields="structureNumber stateCode year operatingRating sufficiencyRating longitude latitude location facilityCarriedByStructure substructure superstructure" page=page sort=sort size=size filter=filter}}
+{{outlet}}
